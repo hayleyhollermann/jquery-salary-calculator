@@ -11,7 +11,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     color: white;
-    border-radius: 100px;
+    border-radius: 20px;
 }
 
 #employeeTable {
