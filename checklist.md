@@ -1,0 +1,14 @@
+- [X]create & test files linked together
+- create input form for:
+    - first name HTML
+    - last name HTML
+    - ID number HTML
+    - job title HTML
+    - annual salary HTML
+- submit button HTML
+- create a table
+    - table header: LN, FN, ID, title, salary, delete button
+    - append input from form to table 
+    - last column needs delete button
+- display total monthly @ bottom
+    -
