@@ -1,8 +1,10 @@
 console.log('js', $);
+let totalMonthly = 0;
 
 $(document).ready(readyNow);
 
 function readyNow(){
+    $('#totalMonthlyOut').text(totalMonthly);
     $('#addEmployee').on('click', addEmployeeClick);
     $('tbody').on('click', 'button', deleteButtonClick);
 }
@@ -21,12 +23,20 @@ function addEmployeeClick(){
             <td>${lastName}</td>
             <td>${idNumber}</td>
             <td>${title}</td>
-            <td>${annualSalary}</td>
+            <td class="salary">${annualSalary}</td>
             <td><button class="deleteButton">Delete</button></td>
         </tr>`
     )
+    totalMonthly += Number(annualSalary);
+    $('#totalMonthlyOut').text(totalMonthly);
 }
 
 function deleteButtonClick(){
+    /*let temp = $(this).siblings('.salary');
+    console.log(temp);*/
+    
+    //totalMonthly = totalMonthly - Number($(this).siblings('.salary').val());
     $(this).closest('tr').remove();
+    $('#totalMonthlyOut').text(totalMonthly);
 }
+
