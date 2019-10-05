@@ -6,7 +6,7 @@ $(document).ready(readyNow);
 
 function readyNow(){
     $('#totalAnnualOut').text(roundToCent(totalAnnual));
-    $('#totalAnnualOut').text(roundToCent(totalAnnual));
+    $('#totalMonthlyOut').text(roundToCent(totalMonthly));
     $('#addEmployee').on('click', addEmployeeClick);
     $('tbody').on('click', 'button', deleteButtonClick);
 }

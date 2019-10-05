@@ -15,6 +15,7 @@
     </div>
     <br>
     <div id="inputFields">
+        <h3>Add Employee:</h3>
         <input placeholder="First Name" id="firstNameInput">
         <input placeholder="Last Name" id="lastNameInput">
         <input placeholder="ID Number" id="idNumberInput">
@@ -23,7 +24,7 @@
         <br>
         <button id="addEmployee">Submit</button>
     </div>
-    <br>
+    <br><br>
     <div id="employeeTable">
         <table>
             <thead>
@@ -40,8 +41,8 @@
         </table>
     </div>
     <div>
-        <h3>Total Annual: $<span id="totalAnnualOut">ANNUAL</span></h3>
-        <h3>Total Monthly: $<span id="totalMonthlyOut">MONTHLY</span></h3>
+        <h3 id="headerAnnual">Total Annual: $<span class="dollarAmount" id="totalAnnualOut">ANNUAL</span></h3>
+        <h3 id="headerMonthly">Total Monthly: $<span class="dollarAmount" id="totalMonthlyOut">MONTHLY</span></h3>
     </div>
 </body>
 </html>
