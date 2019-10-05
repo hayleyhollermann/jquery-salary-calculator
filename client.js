@@ -35,7 +35,7 @@ function deleteButtonClick(){
     /*let temp = $(this).siblings('.salary');
     console.log(temp);*/
     
-    //totalMonthly = totalMonthly - Number($(this).siblings('.salary').val());
+    //totalMonthly = totalMonthly - Number($(this).siblings('.salary').val();
     $(this).closest('tr').remove();
     $('#totalMonthlyOut').text(totalMonthly);
 }
