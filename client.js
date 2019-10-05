@@ -12,7 +12,6 @@ function readyNow(){
 }
 
 function addEmployeeClick(){
-    console.log('submit');
     // sets inputs equal to variables
     let firstName = $('#firstNameInput').val();
     let lastName = $('#lastNameInput').val();
@@ -33,6 +32,9 @@ function addEmployeeClick(){
     // updates totalAnnual & totalMonthly 
     totalAnnual += Number(annualSalary);
     totalMonthly = totalAnnual / 12;
+    if (totalMonthly >= 20000){
+        $('#headerMonthly').css('background-color', 'red');
+    }   
     $('#totalAnnualOut').text(roundToCent(totalAnnual));
     $('#totalMonthlyOut').text(roundToCent(totalMonthly));
 }
@@ -42,12 +44,14 @@ function deleteButtonClick(){
     let salary = $(this).parent().siblings('td.salary').text(); 
     // removes $, casts salary value to a number
     salary = Number(salary.substring(1, salary.length));
-    console.log(salary);
 
     totalAnnual -= salary;
     totalMonthly = totalAnnual / 12;
     // removes entire row from table
     $(this).closest('tr').remove();
+    if (totalMonthly <= 20000){
+        $('#headerMonthly').css('background-color', 'transparent');
+    }
     // updates totalAnnual & totalMonthly 
     $('#totalAnnualOut').text(roundToCent(totalAnnual));
     $('#totalMonthlyOut').text(roundToCent(totalMonthly));
