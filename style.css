@@ -11,15 +11,14 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     color: rgb(185, 185, 185);
-    border-bottom-right-radius: 100%;
-    border-top-right-radius: 100%;
+    border-top-right-radius: 50px;
     letter-spacing: 200%;
     font-family: 'Courier New', Courier, monospace;
 }
 
 #employeeTable {
     border: 1px;
-    border-color: rgb(18, 29, 29);
+    border-color: white;
     border-style: inset;
     color: darkslategray;
 }
@@ -72,4 +71,14 @@ h3 {
 #headerMonthly{
     border-style: solid;
     border-color: black;
+}
+
+input {
+    border: 2px solid white; 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 5px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 5px 0;
 }
