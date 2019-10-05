@@ -37,6 +37,12 @@ function addEmployeeClick(){
     }   
     $('#totalAnnualOut').text(roundToCent(totalAnnual));
     $('#totalMonthlyOut').text(roundToCent(totalMonthly));
+    // clears input fields
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#idNumberInput').val('');
+    $('#titleInput').val('');
+    $('#annualSalaryInput').val('');
 }
 
 function deleteButtonClick(){
