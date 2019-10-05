@@ -1,16 +1,19 @@
 //console.log('js', $);
-let totalMonthly = 0;
+let totalAnnual = 0;
+let totalMonthly = totalAnnual / 12;
 
 $(document).ready(readyNow);
 
 function readyNow(){
-    $('#totalMonthlyOut').text(totalMonthly);
+    $('#totalAnnualOut').text(roundToCent(totalAnnual));
+    $('#totalAnnualOut').text(roundToCent(totalAnnual));
     $('#addEmployee').on('click', addEmployeeClick);
     $('tbody').on('click', 'button', deleteButtonClick);
 }
 
 function addEmployeeClick(){
     console.log('submit');
+    // sets inputs equal to variables
     let firstName = $('#firstNameInput').val();
     let lastName = $('#lastNameInput').val();
     let idNumber = $('#idNumberInput').val();
@@ -27,19 +30,32 @@ function addEmployeeClick(){
             <td><button class="deleteButton">Delete</button></td>
         </tr>`
     )
-    totalMonthly += Number(annualSalary);
-    $('#totalMonthlyOut').text(totalMonthly);
+    // updates totalAnnual & totalMonthly 
+    totalAnnual += Number(annualSalary);
+    totalMonthly = totalAnnual / 12;
+    $('#totalAnnualOut').text(roundToCent(totalAnnual));
+    $('#totalMonthlyOut').text(roundToCent(totalMonthly));
 }
 
 function deleteButtonClick(){
-    /*let temp = $(this).siblings('.salary');
-    console.log(temp);*/
-    let salary = $(this).parent().siblings('td.salary').text();
+    // extracts salary value from salary table cell
+    let salary = $(this).parent().siblings('td.salary').text(); 
+    // removes $, casts salary value to a number
     salary = Number(salary.substring(1, salary.length));
     console.log(salary);
 
-    totalMonthly = totalMonthly - salary;
+    totalAnnual -= salary;
+    totalMonthly = totalAnnual / 12;
+    // removes entire row from table
     $(this).closest('tr').remove();
-    $('#totalMonthlyOut').text(totalMonthly);
+    // updates totalAnnual & totalMonthly 
+    $('#totalAnnualOut').text(roundToCent(totalAnnual));
+    $('#totalMonthlyOut').text(roundToCent(totalMonthly));
+}
+
+function roundToCent(number){
+    // rounds number to 2 decimal places
+    number = number.toFixed(2);
+    return number;
 }
 
