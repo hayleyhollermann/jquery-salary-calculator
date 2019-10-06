@@ -10,9 +10,9 @@ Input fields at the top record employee information including fist name, last na
 
 ## Screen Shot
 
+![Project Screenshot](/images/web.png)
 
-
-## Built With: 
+## Built With
 Visual Studio Code
 
 
